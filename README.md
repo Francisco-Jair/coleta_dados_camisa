@@ -1,1 +1,1 @@
-# coleta_dados_camisa
+# Coleta de dados de sites com camisas

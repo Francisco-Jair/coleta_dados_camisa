@@ -10,8 +10,9 @@ import time
 
 
 def coleta_camisa(url):
-
+    print("OK1")
     page = requests.get(url)
+    print(page)
 
     soup = BeautifulSoup(page.content, 'html.parser')
     nome = soup.find('h2').text.replace("/", "-")
@@ -20,6 +21,7 @@ def coleta_camisa(url):
     all_imagem_page = soup.find_all(class_="showalbum__children image__main")
     u = all_imagem_page[0].find("img").attrs["data-origin-src"]
 
+    print(u)
 
     # criar pasta com o nome da camisa
     nome_pasta = ""
@@ -43,6 +45,7 @@ def coleta_camisa(url):
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
     
+    print("Iniciando selenium")
     driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()), options=chrome_options)
 
 
